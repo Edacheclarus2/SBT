@@ -70,6 +70,10 @@ contract TestOpenNFT is Test {
         assertEq(freedomSBT.getBasicURI(), "ipfs://bafybeigogdgnc7ernxrve2s6gu2zovigtstt5rrlguu6pg6s46bibwbg3m/");
     }
 
+    function testGetTokenUri() public view {
+        console.log(freedomSBT.tokenURI(1));
+    }
+
     function testTransfers() public {
         vm.prank(_bob);
         freedomSBT.mintToken(_bob, 2);
